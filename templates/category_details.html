@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'sayt-index.html' %}
+<html lang="en">
+<body>
+{% block content %}
+    <div class="auto-container">
+        <div style="text-align: center">
+            <h3>Muhammad Rizo Erniyozbek Oʻgʻli Ogahiy <br> asarlari jamlanmasi </h3>
+        </div>
+        <div class="row">
+
+            {% for i in b_cat_list %}
+                <div class="service-block-seven col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                    <div class="inner-box">
+                        <div class="content">
+                            <div class="icon-box"><i class="icon flaticon-menu"></i></div>
+                            <h4 class="title"><a style="text-transform: uppercase"
+                                                 href="{% url 'single' i.a_category.id i.id %}">{{ i.name }}</a>
+                            </h4>
+                            <div class="text">{{ i.comment }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "mobile-index.html" %}
+
+{% block mobile %}
+    <div class="sidebar-service-list">
+        <ul>
+            {% for i in b_cat_list %}
+                <li><h4><a style="text-transform: uppercase;text-align: center;color: white"
+                           href="{% url 'singlemobile' i.a_category.id i.id %}">{{ i.name }}</a></h4></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock mobile %}
+
+</html>
